@@ -5,9 +5,9 @@ from security import bs64_encode_key
 
 temp_user_db = {}
 
-LOGIN_URL_PREFIX ='http://127.0.0.1:8000/login/?one_time_url='
+LOGIN_URL_PREFIX ='http://127.0.0.1:8000/users/login/mfa/?one_time_url='
 CREATE_USER_URL_PREFIX ='http://127.0.0.1:8000/users/create/mfa/?one_time_url='
-DELETE_USER_URL_PREFIX ='http://127.0.0.1:8000/users/delete/?one_time_url='
+DELETE_USER_URL_PREFIX ='http://127.0.0.1:8000/users/delete/mfa/?one_time_url='
 
 
 def add_temp_user(user: UserCreate) -> None:
@@ -22,7 +22,6 @@ def remove_temp_user(email: str) -> None:
 
 
 def get_temp_user(email: str) -> UserCreate:
-    print (temp_user_db)
     try:
         full_name = temp_user_db[email]['full_name']
         password = temp_user_db[email]['password']
