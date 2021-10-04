@@ -1,0 +1,7 @@
+
+__pycache__/
+
+twofactor_app.db
+
+Pipfile
+Pipfile.lock
